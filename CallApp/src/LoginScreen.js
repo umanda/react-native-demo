@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import styles from './Styles';
 import {Voximplant} from 'react-native-voximplant';
-import {VOXIMPLANT_ACCOUNT, VOXIMPLANT_APP} from './Constants';
+import {VOXIMPLANT_ACCOUNT, VOXIMPLANT_APP, VOXIMPLANT_NODE} from './Constants';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -23,7 +23,9 @@ const LoginScreen = () => {
     try {
       let clientState = await voximplant.getClientState();
       if (clientState === Voximplant.ClientState.DISCONNECTED) {
-        await voximplant.connect();
+        await voximplant.connect({
+          node: VOXIMPLANT_NODE
+        });
         await voximplant.login(
           `${user}@${VOXIMPLANT_APP}.${VOXIMPLANT_ACCOUNT}.voximplant.com`,
           password,
