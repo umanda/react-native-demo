@@ -10,7 +10,6 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
-    paddingHorizontal: 20,
   },
   textButton: {
     color: COLOR.BUTTON,
@@ -20,7 +19,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    width: 220,
+    width: 100,
     alignSelf: 'center',
   },
   forminput: {
@@ -59,7 +58,7 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
   },
   callControlsVideo: {
-    height: 100,
+    height: 120,
   },
   incomingCallText: {
     justifyContent: 'center',

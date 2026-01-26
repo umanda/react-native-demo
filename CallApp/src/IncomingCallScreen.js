@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import {
   PermissionsAndroid,
   Platform,
-  SafeAreaView,
   StatusBar,
   Text,
   TouchableOpacity,
@@ -12,6 +11,7 @@ import {
 import styles from './Styles';
 import calls from './Store';
 import {Voximplant} from 'react-native-voximplant';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const IncomingCallScreen = ({route}) => {
   const navigation = useNavigation();
@@ -81,7 +81,7 @@ const IncomingCallScreen = ({route}) => {
           <Text style={styles.incomingCallText}>{caller}</Text>
           <View style={styles.incomingCallButtons}>
             <TouchableOpacity
-              onPress={() => answerCall(true)}
+              onPress={() => answerCall(false)}
               style={styles.button}>
               <Text style={styles.textButton}>ANSWER</Text>
             </TouchableOpacity>

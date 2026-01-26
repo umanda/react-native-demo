@@ -2,7 +2,6 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useState, useRef, useCallback, useEffect} from 'react';
 import {
   Alert,
-  SafeAreaView,
   StatusBar,
   Text,
   TouchableOpacity,
@@ -11,6 +10,7 @@ import {
 import styles from './Styles';
 import {Voximplant} from 'react-native-voximplant';
 import calls from './Store';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const CallScreen = ({route}) => {
   const navigation = useNavigation();

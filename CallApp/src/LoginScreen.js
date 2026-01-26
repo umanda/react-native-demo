@@ -1,7 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
-  SafeAreaView,
   StatusBar,
   Text,
   TextInput,
@@ -9,6 +8,7 @@ import {
   View,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './Styles';
 import {Voximplant} from 'react-native-voximplant';
 import {VOXIMPLANT_ACCOUNT, VOXIMPLANT_APP, VOXIMPLANT_NODE} from './Constants';
@@ -82,7 +82,7 @@ const LoginScreen = () => {
         <View style={[styles.container]}>
           <TextInput
             underlineColorAndroid="transparent"
-            style={styles.forminput}
+            style={[styles.forminput,styles.margin]}
             placeholder="User name"
             autoFocus={true}
             returnKeyType={'next'}
@@ -93,7 +93,7 @@ const LoginScreen = () => {
           />
           <TextInput
             underlineColorAndroid="transparent"
-            style={styles.forminput}
+            style={[styles.forminput,styles.margin]}
             placeholder="User password"
             secureTextEntry={true}
             onChangeText={(text) => setPassword(text)}

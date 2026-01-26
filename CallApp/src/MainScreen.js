@@ -1,7 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState, useEffect} from 'react';
 import {
-  SafeAreaView,
   StatusBar,
   Text,
   TextInput,
@@ -10,6 +9,7 @@ import {
   Platform,
   PermissionsAndroid,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './Styles';
 import {Voximplant} from 'react-native-voximplant';
 import calls from './Store';
@@ -82,7 +82,7 @@ const MainScreen = () => {
             blurOnSubmit={true}
           />
           <TouchableOpacity
-            onPress={() => makeCall(true)}
+            onPress={() => makeCall(false)}
             style={styles.button}>
             <Text style={styles.textButton}>CALL</Text>
           </TouchableOpacity>
